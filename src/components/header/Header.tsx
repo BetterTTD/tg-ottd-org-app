@@ -22,7 +22,7 @@ type HeaderProps = {
     title : string
 }
 
-export const Header : FunctionComponent<HeaderProps> = ({title}) => {
+const Header : FunctionComponent<HeaderProps> = ({title}) => {
     const classes = useStyles();
     return (
         <React.Fragment>
@@ -40,3 +40,5 @@ export const Header : FunctionComponent<HeaderProps> = ({title}) => {
         </React.Fragment>
     )
 }
+
+export default Header;

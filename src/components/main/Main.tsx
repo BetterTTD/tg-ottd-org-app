@@ -14,7 +14,7 @@ type MainProps = {
     posts : string []
 }
 
-export const Main : FunctionComponent<MainProps> = ({ posts, title }) => {
+const Main : FunctionComponent<MainProps> = ({ posts, title }) => {
     const classes = useStyles();
     return (
         <Grid item xs={12} md={8}>
@@ -29,4 +29,6 @@ export const Main : FunctionComponent<MainProps> = ({ posts, title }) => {
             ))}
         </Grid>
     );
-}
+};
+
+export default Main;

@@ -26,7 +26,7 @@ type FeaturedPostProps = {
     post : Post
 }
 
-export const FeaturedPost : FunctionComponent<FeaturedPostProps> = ({post}) => {
+const FeaturedPost : FunctionComponent<FeaturedPostProps> = ({post}) => {
     const classes = useStyles();
     return (
         <Grid item xs={12} md={6}>
@@ -56,3 +56,5 @@ export const FeaturedPost : FunctionComponent<FeaturedPostProps> = ({post}) => {
         </Grid>
     );
 }
+
+export default FeaturedPost;

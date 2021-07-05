@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { CssBaseline } from '@material-ui/core';
 import { Container } from '@material-ui/core';
-import { Header } from '../header/Header';
 import { Grid } from '@material-ui/core';
-import { FeaturedPost } from '../featured-post/FeaturedPost';
 import Banner from '../banner/Banner';
+import Header from '../header/Header';
+import FeaturedPost from '../featured-post/FeaturedPost';
 
 export type Post = {
     title : string,
