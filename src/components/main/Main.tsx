@@ -22,8 +22,8 @@ export const Main : FunctionComponent<MainProps> = ({ posts, title }) => {
                 {title}
             </Typography>
             <Divider />
-            {posts.map((post) => (
-                <Markdown className={classes.markdown} key={post.substring(0, 40)}>
+            {posts.map((post, id) => (
+                <Markdown className={classes.markdown} key={id}>
                     {post}
                 </Markdown>
             ))}

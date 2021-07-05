@@ -1,9 +1,10 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import ReactMarkdown from 'markdown-to-jsx';
 import { Link, Typography } from '@material-ui/core';
+import { Post } from '../master-layout/MasterLayout';
 
 type MarkdownProps = {
-    post : string
+    post : Post
 }
 
 const options = {
@@ -26,7 +27,9 @@ const options = {
     },
   };
   
-export const Markdown : FunctionComponent<MarkdownProps> = ({ post }) => 
+const Markdown : FC<MarkdownProps> = ({ post }) => 
     <ReactMarkdown options={options}>
-        {post}
+        {post.description}
     </ReactMarkdown>;
+
+export default Markdown;
