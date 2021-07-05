@@ -4,8 +4,6 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-import { Post } from '../master-layout/MasterLayout';
-
 const useStyles = makeStyles((theme) => ({
     mainFeaturedPost: {
       position: 'relative',
@@ -35,25 +33,27 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-type BannerProps = {
-    post : Post
+type BannerData = {
+    title : string,
+    description : string,
+    image?: string,
+    imageTitle?: string
 }
 
-const Banner : FC<BannerProps> = ({post}) => {
+const Banner : FC<BannerData> = ({title, description, image, imageTitle }) => {
     const classes = useStyles();
     return (
-        <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
-            {/* Increase the priority of the hero background image */}
-            {<img style={{ display: 'none' }} src={post.image} alt={post.imageTitle} />}
+        <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${image})` }}>
+            <img style={{ display: 'none' }} src={image} alt={imageTitle} />
             <div className={classes.overlay} />
             <Grid container>
                 <Grid item md={6}>
                     <div className={classes.mainFeaturedPostContent}>
                         <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                            {post.title}
+                            {title}
                         </Typography>
                         <Typography variant="h5" color="inherit" paragraph>
-                            {post.description}
+                            {description}
                         </Typography>
                     </div>
                 </Grid>

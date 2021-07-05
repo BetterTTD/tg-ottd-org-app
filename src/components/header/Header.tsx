@@ -1,10 +1,8 @@
-import { makeStyles, Toolbar, Typography } from '@material-ui/core';
-import React, { FunctionComponent } from 'react';
+import { Link } from '@material-ui/core';
+import { makeStyles, Toolbar } from '@material-ui/core';
+import { FunctionComponent } from 'react';
 
 const useStyles = makeStyles((theme) => ({
-    toolbar: {
-      borderBottom: `1px solid ${theme.palette.divider}`,
-    },
     toolbarTitle: {
       flex: 1,
     },
@@ -18,26 +16,32 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-type HeaderProps = {
-    title : string
-}
+const sections = [
+  { title: 'Get Started', url: '#' },
+  { title: 'Wiki', url: '#' },
+  { title: 'Welcome Server', url: '#' },
+  { title: 'Public Server', url: '#' },
+  { title: 'Development', url: '#' },
+];
 
-const Header : FunctionComponent<HeaderProps> = ({title}) => {
+const Header : FunctionComponent = () => {
     const classes = useStyles();
     return (
-        <React.Fragment>
-            <Toolbar className={classes.toolbar}>
-                <Typography
-                    component="h2"
-                    variant="h5"
-                    color="inherit"
-                    align="center"
-                    noWrap
-                    className={classes.toolbarTitle}>
-                    {title}
-                </Typography>
+        <>
+            <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
+                {sections.map((section) => (
+                    <Link
+                      color="inherit"
+                      noWrap
+                      key={section.title}
+                      variant="body2"
+                      href={section.url}
+                      className={classes.toolbarLink}>
+                        {section.title}
+                    </Link>
+                ))}
             </Toolbar>
-        </React.Fragment>
+        </>
     )
 }
 

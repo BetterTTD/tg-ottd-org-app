@@ -32,11 +32,11 @@ const featuredPosts = [
 ];
 
 let bannerData = {
-    title: 'Team Game', 
-    date: '',
+    title: 'TG OpenTTD', 
     image: 'https://source.unsplash.com/random',
     imageTitle: 'Image Text',
-    description: 'desc'};
+    description: 'desc'
+};
 
 type MasterLayoutProps = {
     title : string
@@ -45,9 +45,9 @@ type MasterLayoutProps = {
 const MasterLayout : FC<MasterLayoutProps> = ({ title }) => <>
     <CssBaseline />
     <Container maxWidth="lg">
-        <Header title={title} />
+        <Header />
         <main>
-            <Banner post={bannerData} />
+            <Banner {...bannerData} />
             <Grid container spacing={4}>
                 {featuredPosts.map((post, id) => <FeaturedPost key={id} post={post} />)}
             </Grid>
