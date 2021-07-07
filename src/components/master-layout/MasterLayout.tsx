@@ -1,10 +1,12 @@
 import { FC } from 'react';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline, makeStyles } from '@material-ui/core';
 import { Container } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import Banner from '../banner/Banner';
 import Header from '../header/Header';
 import FeaturedPost from '../featured-post/FeaturedPost';
+import Main from '../main/Main';
+import Posts from '../posts/Posts';
 
 export type Post = {
     title : string,
@@ -14,6 +16,12 @@ export type Post = {
     imageTitle?: string
 }
 
+const useStyles = makeStyles((theme) => ({
+    mainGrid: {
+      marginTop: theme.spacing(3),
+    },
+}));
+  
 const featuredPosts = [
     {
         title: 'Featured post',
@@ -42,17 +50,23 @@ type MasterLayoutProps = {
     title : string
 }
 
-const MasterLayout : FC<MasterLayoutProps> = ({ title }) => <>
-    <CssBaseline />
-    <Container maxWidth="lg">
-        <Header />
-        <main>
-            <Banner {...bannerData} />
-            <Grid container spacing={4}>
-                {featuredPosts.map((post, id) => <FeaturedPost key={id} post={post} />)}
+const MasterLayout : FC<MasterLayoutProps> = ({ title }) => {
+    const classes = useStyles();
+    return (<>
+        <CssBaseline />
+        <Container maxWidth="lg">
+            <Header />
+            <main>
+                <Banner {...bannerData} />
+                <Grid container spacing={4}>
+                    {featuredPosts.map((post, id) => <FeaturedPost key={id} post={post} />)}
+                </Grid>
+                <Grid container spacing={5} className={classes.mainGrid}>
+                <Main title="Blog" posts={Posts} />
             </Grid>
-        </main>
-    </Container>
-</>
+            </main>
+        </Container>
+    </>);
+};
 
 export default MasterLayout;
