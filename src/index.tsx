@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MasterLayout from './components/master-layout/MasterLayout';
-import './index.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <MasterLayout title="TG OpenTTD" />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
