@@ -11,6 +11,12 @@
   text-shadow: none; /* Prevent inheritance from `body` */
 }
 
+.btn-link,
+.btn-link:hover,
+.btn-link:focus {
+  color: #ffc107;
+  text-shadow: none;
+}
 
 /*
  * Base structure

@@ -7,17 +7,17 @@ const routes = [
         Path: "/"
     },
     {
-        Name: "Welcome Serve",
+        Name: "Welcome Server",
         Path: "/welcome-server"
     },
     {
-        Name: "Public Serve",
+        Name: "Public Server",
         Path: "/public-server"
     },
 ];
 
 const Header : FC = () => (
-    <header className="mb-auto">
+    <header className="mb-auto text-center">
         <div>
             <h3 className="float-md-start mb-0">TeamGame</h3>
             <nav className="nav nav-masthead justify-content-center float-md-end">

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home : FC = () => (
-    <main className="px-3">
+    <main className="px-3 text-center ">
         <h1>Introduction Trailer</h1>
         <iframe 
             width="560" 
