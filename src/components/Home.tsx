@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
 const Home : FC = () => (
     <main className="px-3 text-center ">
@@ -12,7 +11,7 @@ const Home : FC = () => (
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
         <p className="lead">Welcome to our OpenTTD gaming community. Join us to become a part of something incredible. Get ready for NEW experience!</p>
         <p className="lead">
-            <Link to="#" className="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</Link>
+            <a target="_blank" rel="noreferrer" href="http://wiki.tg-ottd.org"  className="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
         </p>
     </main>
 );

@@ -13,7 +13,7 @@ type GameCardProps = {
 }
 
 const GameCard : FC<GameCardProps> = (props) => (
-    <div className="card text-white bg-secondary mb-3">
+    <div className="card text-white mb-3" style={{backgroundColor: "#343a40"}}>
         <img src={props.ImageSrc} className="card-img-top" alt="..." />
         <div className="card-body">
             <h3 className="card-title">{props.Title}</h3>
